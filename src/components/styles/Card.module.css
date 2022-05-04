@@ -1,0 +1,37 @@
+.btn {
+    background-color: rgb(239, 159, 159);
+    width: 25px;
+    border-radius: 10px;
+    margin: 5px;
+    align-self: flex-end;
+}
+
+.btnColor{
+    color: wheat;
+}
+
+.btn:hover{
+    color: rgb(239, 159, 159);
+    background-color: wheat;
+}
+
+.middleDiv{
+    display: flex;
+    flex-direction: column;  
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-content: center;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: lightslategray;
+}
+
+.temp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly   ;
+}
