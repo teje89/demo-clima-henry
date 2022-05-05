@@ -1,5 +1,7 @@
 import React from 'react';
 import s from './styles/Card.module.css';
+import icon_09d from '../assets/09d.png'
+import icon_03n from '../assets/03n.png' 
 //import {AiOutlineCloseCircle} from 'react-icons/ai' <AiOutlineCloseCircle/> npm install react-icon usar iconos
 
 export default function Card({max, min, name, img, onClose}) {
@@ -20,7 +22,14 @@ export default function Card({max, min, name, img, onClose}) {
                 <p>{max}</p>
                 </div>
               </div>
-              <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
+              <WeatherIcon icon={img} />
         </div>
 };
   
+function WeatherIcon({ icon }) {
+  switch (icon) {
+    case "03n" : return <img src={icon_03n} alt="cloudy_flaticon" />;
+    default:
+      return <img src={icon_09d} alt="rainy_flaticon" />;
+  }
+}
