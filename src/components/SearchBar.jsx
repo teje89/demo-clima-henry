@@ -1,11 +1,19 @@
 import React from 'react';
 import styling from './styles/SearchBar.module.css'
 
-export default function SearchBar(props) {
-  // acá va tu código
-  return ( <div className={styling.container}>
-                <input type="text" placeholder='Ciudad...' />
-                <button onClick={() =>props.onSearch('Buscando Ciudad')} className={styling.btn}>Agregar</button>
-          </div>
+export default function SearchBar({onSearch}) {
+  
+  function handleOnSearch() {
+    if (typeof onSearch === "function") {
+      const input = document.getElementById("search-bar-input");
+      onSearch(input.value);
+    }
+  }
+
+  return (
+     <div className={styling.container}>
+          <input type="text" placeholder='Ciudad...' id="search-bar-input" />
+          <button onClick={handleOnSearch} className={styling.btn}>Agregar</button>
+     </div>
   )
 }; 
