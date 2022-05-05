@@ -1,11 +1,14 @@
 import React from 'react';
 import s from './styles/Card.module.css';
+//import {AiOutlineCloseCircle} from 'react-icons/ai' <AiOutlineCloseCircle/> npm install react-icon usar iconos
 
 export default function Card({max, min, name, img, onClose}) {
   // acá va tu código
   //se usa `${ para cuando le tenemos que dar mas de una clase}
   return <div className={s.card}>
-              <button onClick={onClose} className={`${s.btn} ${s.btnColor}`}> X </button> 
+              <button onClick={onClose} className={`${s.btn} ${s.btnColor}`}> X
+                
+              </button> 
               <h4>{name}</h4>
               <div className={s.middleDiv}>
                 <div className={s.temp}>
