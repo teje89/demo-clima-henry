@@ -1,0 +1,16 @@
+
+.links {
+    gap: 1rem;
+}
+
+.brand, 
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    gap: 0,5rem;
+    align-items: center;
+}
+
