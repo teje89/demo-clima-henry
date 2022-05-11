@@ -13,6 +13,7 @@ export default function Cards({cities, onRemove}) {
                   min={city.min}
                   name={city.name}
                   img={city.img}
+                  id={city.id}
                   onClose={() => onRemove(city.id)}
                   />
                 )) 

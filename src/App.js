@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import Card from './components/Card.jsx';
 import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
+//import SearchBar from './components/SearchBar.jsx';
 //import data, { Cairns } from './data.js';
 import Nav from './components/Nav.jsx';
+import { Route } from 'react-router-dom';
+import About from './components/About';
+import Ciudad from './components/Ciudad'
 
 const API_KEY = process.env.REACT_APP_API_KEY //variables de entorno, por seguridad, react pide tb MAYUS
 
@@ -53,8 +56,18 @@ function App() {
 
   return ( //ya no trabajamos con data "de mentira", trabajaamos con data real que viene de API
     <div className="App">
-        <SearchBar onSearch={onSearch} />
+      <Route path="/">
+        <Nav onSearch={onSearch} />
+      </Route>
+      <Route path="/" exact>
         <Cards cities={cities} onRemove={handleRemoveCity} /> 
+      </Route>
+      <Route path="/about" component={About} />
+      <Route path="/ciudad/:id" exact render={({match}) => {
+        const city = cities.find((city)=>city.id === parseInt(match.params.id));
+        return city ?  <Ciudad city={city} /> : <h1> 404 | NOT FOUND </h1>
+      }}/>
+  
       </div>
   );
 }
